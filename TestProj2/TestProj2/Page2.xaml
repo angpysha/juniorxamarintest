@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestProj2.Page2">
+  <StackLayout>
+    <Label Text="Данные бланка" HorizontalOptions="Center" FontSize="Large" FontAttributes="Bold"/>
+
+    <Label x:Name="FirstName" Text="{Binding FirstName}"></Label>
+    <Label x:Name="Surname" Text="{Binding SurName}"></Label>
+    <Label x:Name="Country" Text="{Binding Country}"></Label>
+    <Label x:Name="City" Text="{Binding Path=City}"></Label>
+    <Label x:Name="University" Text="{Binding Path=University}"></Label>
+    <Button x:Name="Back" Clicked="Back_OnClicked" Text="Назад" HorizontalOptions="Start"></Button>
+  </StackLayout>
+</ContentPage>

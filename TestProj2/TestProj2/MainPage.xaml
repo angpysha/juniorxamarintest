@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TestProj2"
+             x:Class="TestProj2.MainPage">
+  <StackLayout>
+    <Label x:Name="lab1" HorizontalOptions="Center" IsVisible="False"></Label>
+    <Label x:Name="BlankLabel"
+           HorizontalOptions="Center" Text="Бланк" FontSize="Large" FontAttributes="Bold"></Label>
+    <Entry x:Name="Firstname"
+            HorizontalOptions="FillAndExpand" Placeholder="Имя"  TextColor="Black"
+    TextChanged="Firstname_OnTextChanged"></Entry>
+    <Entry x:Name="Surname"
+            HorizontalOptions="FillAndExpand" Placeholder="Фамилия" TextColor="Black"
+            TextChanged="Surname_OnTextChanged"></Entry>
+    <Picker x:Name="CountriesList" IsEnabled="False"></Picker>
+    <Entry x:Name="CitiesEntry" TextChanged="CitiesEntry_OnTextChanged"
+           Placeholder="Город" TextColor="Black" Focused="CitiesEntry_OnFocused" IsEnabled="False"></Entry>
+    <!--<Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*"></RowDefinition>
+      </Grid.RowDefinitions>-->
+      <ListView x:Name="CitiesList" IsVisible="False"
+                ItemTapped="CitiesList_OnItemTapped"
+        HasUnevenRows="True">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <ViewCell.View>
+                <StackLayout>
+                  <Label Text="{Binding Title}" FontSize="16"></Label>
+                </StackLayout>
+              </ViewCell.View>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    <!--</Grid>-->
+    <Entry x:Name="UniversityEntry" TextChanged="UniversityCitiesEntry_OnTextChanged" 
+           Placeholder="Университет" TextColor="Black" IsEnabled="False"></Entry>
+  <ListView x:Name="UnivesitiesList"
+            IsVisible="False"
+    HasUnevenRows="True"
+    ItemTapped="UnivesitiesList_OnItemTapped">
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <ViewCell.View>
+            <StackLayout>
+              <Label Text="{Binding Title}" FontSize="16"></Label>
+            </StackLayout>
+          </ViewCell.View>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
+  <Button x:Name="button1" HorizontalOptions="Center" Text="Заполнить бланк" Clicked="Button1_OnClicked"></Button>
+  </StackLayout>
+</ContentPage>
